@@ -1,0 +1,3 @@
+interface SidebarProps {
+  className?: string;
+}

@@ -1,0 +1,3 @@
+interface MainProps {
+  className?: string;
+}
