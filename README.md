@@ -1,6 +1,6 @@
 ## YouTube Clone - Next-Gen Video Platform
 
-![Youtube Dashboard](youtube.png)
+![Youtube Dashboard](/public/youtube.png)
 
 ## Overview
 
