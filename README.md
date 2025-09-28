@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## YouTube Clone - Next-Gen Video Platform
 
-## Getting Started
+![Youtube Dashboard]('/youtube.png)
 
-First, run the development server:
+## Overview
+
+Welcome to YouTube Clone, a fully-featured, high-performance video streaming platform built for modern users and businesses. This project is designed to showcase cutting-edge React.js, Next.js, TypeScript, Redux Toolkit, and Tailwind CSS capabilities while ensuring scalability, security, and an exceptional user experience.
+
+Whether you're looking to launch a video platform, integrate streaming functionality into your application, or explore cutting-edge web technologies, this solution is production-ready and customizable.
+
+## Features
+
+- Dynamic Video Streaming
+- Infinite Scrolling
+- Live Chatting
+- Real Time Search and Suggestions
+- Optimized Performance
+- Lazy Loading
+- Caching
+- Limit API Calls on Search
+
+## Tech Stack
+
+- Frontend: Next.js, TypeScript, Tailwind CSS
+- State Management: Redux Toolkit
+- Performance Optimization: Lazy loading, code splitting, caching strategies
+- Data Handling: Video streaming, search indexing, live updates
+- Deployment: Vercel-ready for seamless hosting
+
+## Project Structure
+
+- Before starting the project please add .env file and add Youtube API KEY into it. Refer the below link for help.
+- https://stackoverflow.com/questions/44399219/where-to-find-the-youtube-api-key
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Clone repository
+
+git clone https://github.com/yourusername/youtube-clone.git
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

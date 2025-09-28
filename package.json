@@ -1,7 +1,16 @@
 {
-  "name": "nextflix_gpt",
-  "version": "0.1.0",
+  "name": "Youtube_Clone",
+  "version": "1.0",
   "private": true,
+  "author": {
+    "name": "Jenish Gojariya",
+    "email": "jenishgojariya@gmail.com",
+    "url": "https://jenish-portfolio-sigma.vercel.app/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jenishgojariya/youtube_clone.git"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
