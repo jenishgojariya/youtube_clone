@@ -69,7 +69,7 @@ export default function VideoContainer() {
     <div className="pb-8">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-2">
         {videos?.map((video, index) => {
-          const isLast = index === videos.length - 1;
+          const isLast = index === videos?.length - 1;
           const videoCard = (
             <Link href={"watch?v=" + video?.id} key={video?.id}>
               <VideoCard info={video} />
@@ -92,7 +92,7 @@ export default function VideoContainer() {
         </div>
       )}
 
-      {!hasMore && videos.length > 0 && (
+      {!hasMore && videos?.length > 0 && (
         <div className="flex justify-center items-center py-8">
           <p className="text-gray-500 text-lg">No more videos to load</p>
         </div>
