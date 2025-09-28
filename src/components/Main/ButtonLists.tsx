@@ -124,7 +124,7 @@ export default function ButtonLists() {
           WebkitOverflowScrolling: "touch",
         }}
       >
-        {list.map((val) => (
+        {list?.map((val) => (
           <Button key={val} name={val} />
         ))}
       </div>

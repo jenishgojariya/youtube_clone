@@ -68,7 +68,7 @@ export default function VideoContainer() {
   return (
     <div className="pb-8">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-2">
-        {videos.map((video, index) => {
+        {videos?.map((video, index) => {
           const isLast = index === videos.length - 1;
           const videoCard = (
             <Link href={"watch?v=" + video?.id} key={video?.id}>

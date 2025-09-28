@@ -67,7 +67,7 @@ export default function LiveChat() {
         className="h-[300px] overflow-y-auto px-4 py-4 custom-scrollbar"
       >
         <div className="flex flex-col-reverse gap-3 min-h-full">
-          {chatMessages.map((c, i) => (
+          {chatMessages?.map((c, i) => (
             <ChatMessage key={i} name={c.name} message={c.message} />
           ))}
         </div>

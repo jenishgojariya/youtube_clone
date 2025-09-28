@@ -246,7 +246,7 @@ const Comment = ({
             depth > 0 ? "border-l border-l-gray-200 ml-4" : ""
           }`}
         >
-          {data.replies.map((reply) => (
+          {data?.replies?.map((reply) => (
             <Comment key={reply.id} data={reply} depth={depth + 1} />
           ))}
         </div>
@@ -256,7 +256,7 @@ const Comment = ({
 };
 
 const CommentList = ({ datas }: { datas: CommentType[] }) => {
-  return datas.map((data) => (
+  return datas?.map((data) => (
     <div key={data.id} className="mb-1 last:mb-0">
       <Comment data={data} />
     </div>
