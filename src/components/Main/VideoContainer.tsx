@@ -1,10 +1,10 @@
 import React, { useEffect, useState, useRef, useCallback } from "react";
-import VideoCard from "./VideoCard";
+import VideoCard, { VideoInfo } from "./VideoCard";
 import { YOUTUBE_VIDEOS_API } from "@/constants/api";
 import Link from "next/link";
 
 export default function VideoContainer() {
-  const [videos, setVideos] = useState<any[]>([]);
+  const [videos, setVideos] = useState<VideoInfo[]>([]);
   const [loading, setLoading] = useState(false);
   const [nextPageToken, setNextPageToken] = useState<string | null>(null);
   const [hasMore, setHasMore] = useState(true);
@@ -71,13 +71,13 @@ export default function VideoContainer() {
         {videos.map((video, index) => {
           const isLast = index === videos.length - 1;
           const videoCard = (
-            <Link href={"watch?v=" + video.id} key={video.id}>
+            <Link href={"watch?v=" + video?.id} key={video?.id}>
               <VideoCard info={video} />
             </Link>
           );
 
           return isLast ? (
-            <div ref={lastVideoRef} key={video.id}>
+            <div ref={lastVideoRef} key={video?.id}>
               {videoCard}
             </div>
           ) : (

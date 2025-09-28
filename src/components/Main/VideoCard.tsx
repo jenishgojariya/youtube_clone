@@ -1,21 +1,36 @@
 import Image from "next/image";
 import React from "react";
 
-export default function VideoCard({ info }: any) {
+export type VideoInfo = {
+  snippet: {
+    channelTitle: string;
+    title: string;
+    thumbnails: {
+      high: { url: string };
+    };
+  };
+  statistics: {
+    viewCount: string;
+  };
+  id?: string;
+};
+
+export default function VideoCard({ info }: { info: VideoInfo }) {
   const { snippet, statistics } = info;
   const { channelTitle, title, thumbnails } = snippet;
+
   const formatViewCount = (views: string) => {
     const count = parseInt(views);
-    if (count >= 1000000) {
-      return `${(count / 1000000).toFixed(1)}M`;
-    } else if (count >= 1000) {
-      return `${(count / 1000).toFixed(1)}K`;
+    if (count >= 1_000_000) {
+      return `${(count / 1_000_000).toFixed(1)}M`;
+    } else if (count >= 1_000) {
+      return `${(count / 1_000).toFixed(1)}K`;
     }
     return count.toString();
   };
 
   return (
-    <div className="mt-2w-64 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer">
+    <div className="mt-2 w-64 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer">
       <div className="relative">
         <Image
           alt={`${title} image`}

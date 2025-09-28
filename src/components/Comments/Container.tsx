@@ -8,7 +8,19 @@ import {
   MessageCircle,
 } from "lucide-react";
 
-const commentsData = [
+// ✅ Type for comments
+export type CommentType = {
+  id: number;
+  name: string;
+  text: string;
+  timestamp: string;
+  likes: number;
+  isLiked: boolean;
+  isDisliked: boolean;
+  replies: CommentType[];
+};
+
+const commentsData: CommentType[] = [
   {
     id: 1,
     name: "Alex Chen",
@@ -74,7 +86,13 @@ const commentsData = [
   },
 ];
 
-const Comment = ({ data, depth = 0 }: any) => {
+const Comment = ({
+  data,
+  depth = 0,
+}: {
+  data: CommentType;
+  depth?: number;
+}) => {
   const [isLiked, setIsLiked] = useState(data.isLiked);
   const [isDisliked, setIsDisliked] = useState(data.isDisliked);
   const [likes, setLikes] = useState(data.likes);
@@ -141,7 +159,7 @@ const Comment = ({ data, depth = 0 }: any) => {
             {data.text}
           </p>
 
-          {/* Actions - YouTube Style */}
+          {/* Actions */}
           <div className="flex items-center gap-4 text-xs">
             <div className="flex items-center gap-1 bg-gray-100 rounded-full">
               <button
@@ -228,7 +246,7 @@ const Comment = ({ data, depth = 0 }: any) => {
             depth > 0 ? "border-l border-l-gray-200 ml-4" : ""
           }`}
         >
-          {data.replies.map((reply: any) => (
+          {data.replies.map((reply) => (
             <Comment key={reply.id} data={reply} depth={depth + 1} />
           ))}
         </div>
@@ -237,8 +255,8 @@ const Comment = ({ data, depth = 0 }: any) => {
   );
 };
 
-const CommentList = ({ datas }: any) => {
-  return datas.map((data: any) => (
+const CommentList = ({ datas }: { datas: CommentType[] }) => {
+  return datas.map((data) => (
     <div key={data.id} className="mb-1 last:mb-0">
       <Comment data={data} />
     </div>
@@ -253,7 +271,7 @@ export default function Container() {
 
   return (
     <div className="max-w-3xl p-4">
-      {/* YouTube Style Header */}
+      {/* Header */}
       <div className="mb-6">
         <div className="flex items-center gap-4 mb-3">
           <h2 className="text-xl font-semibold text-gray-900">
@@ -265,7 +283,7 @@ export default function Container() {
           </div>
         </div>
 
-        {/* Add Comment - YouTube Style */}
+        {/* Add Comment */}
         <div className="flex gap-3">
           <Image
             alt="user"
@@ -305,7 +323,7 @@ export default function Container() {
         <CommentList datas={commentsData} />
       </div>
 
-      {/* YouTube Style Load More */}
+      {/* Load More */}
       <div className="text-center mt-6">
         <button className="px-6 py-2 border border-gray-300 rounded-full hover:bg-gray-50 text-sm font-medium text-gray-700 transition-colors">
           Load more comments

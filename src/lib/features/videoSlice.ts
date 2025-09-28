@@ -1,8 +1,9 @@
+import { VideoInfo } from "@/components/Main/VideoCard";
 import { YOUTUBE_VIDEOS_API, YOUTUBE_SEARCH_API } from "@/constants/api";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 interface VideoState {
-  ytVideos: any[];
+  ytVideos: VideoInfo[];
   loading: boolean;
   error: string;
   nextPageToken: string | null;
